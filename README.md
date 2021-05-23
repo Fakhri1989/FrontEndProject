@@ -1,3 +1,3 @@
-#this is goinf to be Epic!
+## this is going to be Epic!
 "# FrontEndProject" 
 
