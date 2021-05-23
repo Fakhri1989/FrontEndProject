@@ -29,3 +29,6 @@ var b = new Calculator(10, 5);
 
 a.log();
 b.log();
+
+
+setTimeout(()=>b.log(), 2000);
