@@ -11,8 +11,8 @@ export class Exam{
     }
 
     print(): void{
-        this.questions.forEach(element => {
-            console.log(element.print());
+        this.questions.forEach(question => {
+            console.log(question.print());
             console.log();
         });
     }
@@ -21,14 +21,14 @@ export class Exam{
         let correctAnswers = 0;
         let numberOfQuestions = 0;
 
-        this.questions.forEach(element => {
-            if(element.getAnswer() === answers[numberOfQuestions]){
+        this.questions.forEach(question => {
+            if(question.getAnswer() === answers[numberOfQuestions]){
                 correctAnswers++;
             }
 
             numberOfQuestions ++;
         });
 
-        return correctAnswers/numberOfQuestions;
+        return correctAnswers/numberOfQuestions * 100;
     }
 }
