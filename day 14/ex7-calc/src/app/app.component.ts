@@ -6,12 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    title: string = "Calculator";
     a: number = 0;
     b: number = 0;
-    sumValue: number = 0;
-    mulValue: number = 0;
-    subValue: number = 0;
+    sumValue: number | null = null;
+    mulValue: number | null = null;
+    subValue: number | null = null;
     results: string[] = [];
+
+    get hasValue(): boolean{
+        return this.sumValue !== null && this.mulValue !== null && this.subValue !== null;
+    }
 
     sum() : number{
         return this.a + this.b;
@@ -25,17 +30,20 @@ export class AppComponent {
         return this.a - this.b;
     }
 
-    setNumbers(a:number, b:number):void{
-        this.a = a;
-        this.b = b;
+    reset(): void{
+        this.mulValue = null;
+        this.subValue = null;
+        this.sumValue = null;
     }
 
     setA(a:string):void{
         this.a = Number(a);
+        this.reset();
     }
 
     setB(b:string):void{
         this.b = Number(b);
+        this.reset();
     }   
 
     calculate():void{
