@@ -1,0 +1,15 @@
+<label>a
+    <input #inputA (input)="setA(inputA.value)" type="number">
+</label>
+
+<label>b
+    <input #inputB (input)="setB(inputB.value)" type="number">
+</label>
+
+<button (click)="calculate()">Go!</button>
+
+<ul>
+    <li *ngFor="let res of results; let mispar = index">
+        {{res}}
+    </li>
+</ul>
