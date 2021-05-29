@@ -1,0 +1,20 @@
+<div *ngFor="let question of questions">
+    <div  *ngIf="question.userAnswer == question.correctAnswer; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <div class="true question">
+            <h2 class="question"> {{question.caption}}
+            </h2>
+            <h3>{{question.answers[question.userAnswer]}}</h3>
+        </div>
+
+    </ng-template>
+
+    <ng-template #elseBlock>
+        <div class="false question">
+            <h2 class="question"> {{question.caption}}
+            </h2>
+            <h3>{{question.answers[question.userAnswer]}}</h3>
+        </div>
+    </ng-template>
+
+</div>
